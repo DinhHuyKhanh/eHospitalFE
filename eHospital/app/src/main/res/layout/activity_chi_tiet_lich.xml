@@ -48,7 +48,7 @@
         <EditText
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="35dp"
+            android:layout_marginLeft="34dp"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
     </LinearLayout>
     <LinearLayout
@@ -107,7 +107,7 @@
         <EditText
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="99dp"
+            android:layout_marginLeft="98dp"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
     </LinearLayout>
     <LinearLayout
@@ -127,7 +127,7 @@
         <EditText
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="73dp"
+            android:layout_marginLeft="72dp"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
     </LinearLayout>
     <LinearLayout
@@ -187,7 +187,7 @@
         <EditText
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="92dp"
+            android:layout_marginLeft="91dp"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
     </LinearLayout>
     <LinearLayout
