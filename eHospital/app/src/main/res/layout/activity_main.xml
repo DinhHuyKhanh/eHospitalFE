@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
     <LinearLayout
-        android:background="@color/green_6"
+        android:background="@color/green_8"
         android:layout_width="match_parent"
         android:padding="5dp"
         android:layout_height="wrap_content">
@@ -148,12 +148,12 @@
 
 
     <Button
-
+        android:id="@+id/btnNext"
         android:layout_marginTop="40dp"
         android:layout_width="108dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="262dp"
-        android:background="@color/green_6"
+        android:background="@color/green_8"
         android:text="Tiếp tục"
         android:textColor="#000" />
 </LinearLayout>
