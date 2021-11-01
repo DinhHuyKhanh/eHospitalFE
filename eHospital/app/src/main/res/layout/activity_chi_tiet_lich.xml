@@ -46,6 +46,8 @@
             />
 
         <EditText
+
+            android:id="@+id/editTT"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="34dp"
@@ -65,6 +67,8 @@
             />
 
         <EditText
+
+            android:id="@+id/editBS"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="76dp"
@@ -85,6 +89,8 @@
             />
 
         <EditText
+
+            android:id="@+id/editDate"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="84dp"
@@ -105,6 +111,8 @@
             />
 
         <EditText
+
+            android:id="@+id/editHour"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="98dp"
@@ -125,6 +133,8 @@
             />
 
         <EditText
+
+            android:id="@+id/editHTen"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="72dp"
@@ -145,6 +155,8 @@
             />
 
         <EditText
+
+            android:id="@+id/editNgaySinh"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="46dp"
@@ -165,6 +177,8 @@
             />
 
         <EditText
+
+            android:id="@+id/editDChi"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="70dp"
@@ -185,6 +199,8 @@
             />
 
         <EditText
+            android:id="@+id/editPhone"
+
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="91dp"
