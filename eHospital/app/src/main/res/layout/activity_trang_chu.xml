@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TrangChu">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/bv_background" />
+
+    <Button
+        android:id="@+id/btnKhoa"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="ĐẶT LỊCH"
+        android:translationX="0dp"
+        android:translationY="250dp" />
+
+    <Button
+        android:id="@+id/btnLichKham"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="Lịch khám"
+        android:translationX="200dp"
+        android:translationY="250dp" />
+
+</RelativeLayout>
