@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/ivHinh"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:padding="10dp"/>
+
+    <TextView
+        android:id="@+id/tvTen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ivHinh"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:text="Nguyễn Văn Anh"/>
+
+    <TextView
+        android:id="@+id/tvHV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ivHinh"
+        android:layout_below="@id/tvTen"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:text="Học vị: Thạc sĩ"/>
+
+    <TextView
+        android:id="@+id/tvKN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ivHinh"
+        android:layout_below="@id/tvHV"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:text="Kinh nghiệm: 10 năm"/>
+
+    <TextView
+        android:id="@+id/tvGia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ivHinh"
+        android:layout_below="@id/tvKN"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:text="Giá: 200.000 VND"/>
+
+</RelativeLayout>
