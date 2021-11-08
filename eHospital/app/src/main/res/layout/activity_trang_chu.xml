@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/rootview"
+    xmlns:hwads="http://schemas.android.com/apk/res-auto"
     tools:context=".TrangChu">
 
     <ImageView
@@ -27,5 +29,13 @@
         android:text="Lịch khám"
         android:translationX="200dp"
         android:translationY="250dp" />
+    <com.huawei.hms.ads.banner.BannerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/banner"
+        android:layout_alignParentBottom="true"
+        hwads:adId="testw6vs28auh3"
+        hwads:bannerSize="BANNER_SIZE_360_57"
+        />
 
 </RelativeLayout>
