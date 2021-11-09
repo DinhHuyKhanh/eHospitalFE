@@ -1,7 +1,8 @@
 package com.ktt.ehospital;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class InforUser extends AppCompatActivity {
 
