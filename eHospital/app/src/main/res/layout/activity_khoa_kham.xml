@@ -8,10 +8,10 @@
     tools:context=".KhoaKham">
 
   <LinearLayout
-      android:background="@color/green_8"
       android:layout_width="match_parent"
-      android:padding="5dp"
-      android:layout_height="wrap_content">
+      android:layout_height="60dp"
+      android:background="@color/green_8"
+      android:padding="5dp">
 
     <ImageButton
         android:id="@+id/imgBack"
@@ -20,16 +20,23 @@
         android:background="@null"
         android:src="@drawable/baseline_arrow_back_20"
         tools:ignore="SpeakableTextPresentCheck" />
+
     <TextView
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="10dp"
+        android:id="@+id/tviewLich"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tviewLich"
-        android:textColor="@color/black"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="10dp"
         android:text="Danh sách khoa khám bệnh"
-        android:textSize="22sp"
-        />
+        android:textColor="@color/black"
+        android:textSize="22sp" />
+
   </LinearLayout>
 
-  </RelativeLayout>
+  <ListView
+      android:id="@+id/lvKhoaKham"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:translationY="60dp" />
+
+</RelativeLayout>

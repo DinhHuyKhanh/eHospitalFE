@@ -19,6 +19,9 @@
             android:exported="true" />
         <activity
             android:name=".LoginActivity"
+        android:exported="true"/>
+        <activity
+            android:name=".BacSi"
             android:exported="true" />
         <activity
             android:name=".KhoaKham"
