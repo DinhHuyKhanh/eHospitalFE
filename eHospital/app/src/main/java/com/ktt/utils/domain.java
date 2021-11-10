@@ -3,7 +3,7 @@ package com.ktt.utils;
 public class domain {
     public static String token;
     public static String urlDepartment;
-    public static String urlAuth="http://192.161.1.121:8080/api/auth/";
+    public static String urlAuth="http://192.168.1.5:8080/api/auth/";
     public static String urlDoctor;
     public static String urlAppointment;
 
