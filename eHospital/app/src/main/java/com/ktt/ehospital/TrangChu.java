@@ -11,9 +11,7 @@ import com.huawei.hms.ads.HwAds;
 import com.huawei.hms.ads.banner.BannerView;
 
 public class TrangChu extends AppCompatActivity {
-
     Button btnDatLich;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
