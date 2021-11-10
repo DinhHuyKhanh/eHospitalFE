@@ -2,12 +2,14 @@ package com.ktt.ehospital;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -16,6 +18,7 @@ public class NgayGio extends AppCompatActivity {
 
     EditText editNgay;
     ImageButton back;
+    Button btnNext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +27,8 @@ public class NgayGio extends AppCompatActivity {
 
         back = (ImageButton) findViewById(R.id.imgBack);
         editNgay = (EditText) findViewById(R.id.editNgay);
-
+        btnNext = (Button) findViewById(R.id.btnNext);
+         //bắt sự kiện cho việc chọn ngày
         editNgay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,6 +42,13 @@ public class NgayGio extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(NgayGio.this, BacSi.class);
                 startActivity(intent);
+            }
+        });
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(NgayGio.this,InforUser.class);
+                startActivity(in);
             }
         });
     }
