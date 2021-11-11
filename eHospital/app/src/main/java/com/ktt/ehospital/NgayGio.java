@@ -40,14 +40,14 @@ public class NgayGio extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(NgayGio.this, BacSi.class);
+                Intent intent = new Intent(NgayGio.this, DatLich.class);
                 startActivity(intent);
             }
         });
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in = new Intent(NgayGio.this,InforUser.class);
+                Intent in = new Intent(NgayGio.this,DatLich.class);
                 startActivity(in);
             }
         });

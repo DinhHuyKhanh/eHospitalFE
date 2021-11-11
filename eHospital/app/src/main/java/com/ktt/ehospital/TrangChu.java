@@ -28,7 +28,7 @@ public class TrangChu extends AppCompatActivity {
         btnDatLich.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(TrangChu.this, KhoaKham.class);
+                Intent intent = new Intent(TrangChu.this, DatLichKham.class);
                 startActivity(intent);
             }
         });

@@ -31,7 +31,7 @@ public class BacSi extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(BacSi.this, KhoaKham.class);
+                Intent intent = new Intent(BacSi.this, DatLich.class);
                 startActivity(intent);
             }
         });
@@ -45,7 +45,7 @@ public class BacSi extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 //i: vị trí click trên listview
-                Intent intent = new Intent(BacSi.this, NgayGio.class);
+                Intent intent = new Intent(BacSi.this, DatLich.class);
                 startActivity(intent);
 
             }
