@@ -125,13 +125,13 @@ public class LoginActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(LoginActivity.this,TrangChu.class);
                 startActivity(intent);
-                finish();
+                //finish();
 
             }
 
             @Override
             public void onFailure(Call<Account> call, Throwable t) {
-                Toast.makeText(LoginActivity.this, "Xin chào :" + accountDTO.getUsername() ,Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "failed :" + accountDTO.getUsername() ,Toast.LENGTH_SHORT).show();
             }
 
         });
