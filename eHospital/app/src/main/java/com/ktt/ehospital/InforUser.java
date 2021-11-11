@@ -31,13 +31,15 @@ public class InforUser extends AppCompatActivity {
         imgBackInfor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(InforUser.this, NgayGio.class);
+                Intent intent = new Intent(InforUser.this, DatLich.class);
                 startActivity(intent);
             }
         });
         btnDatLich.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(InforUser.this, DatLich.class);
+                startActivity(intent);
 
             }
         });

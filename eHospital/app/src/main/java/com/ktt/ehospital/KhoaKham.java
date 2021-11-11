@@ -18,6 +18,7 @@ public class KhoaKham extends AppCompatActivity {
     ImageButton back;
     ListView lvKhoaKham;
     ArrayList<String> dsKhoaKham;
+    String khoa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,7 @@ public class KhoaKham extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(KhoaKham.this, TrangChu.class);
+                Intent intent = new Intent(KhoaKham.this, DatLich.class);
                 startActivity(intent);
             }
         });
@@ -52,8 +53,10 @@ public class KhoaKham extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 //i: vị trí click trên listview
                 //Toast.makeText(KhoaKham.this, ""+i, Toast.LENGTH_SHORT).show();
-                Toast.makeText(KhoaKham.this, dsKhoaKham.get(i), Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(KhoaKham.this, BacSi.class);
+                //Toast.makeText(KhoaKham.this, dsKhoaKham.get(i), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(KhoaKham.this, DatLich.class);
+                khoa = dsKhoaKham.get(i);
+                intent.putExtra("KhoaKham",khoa);
                 startActivity(intent);
 
             }
@@ -68,6 +71,5 @@ public class KhoaKham extends AppCompatActivity {
         dsKhoaKham.add("Tiêu hóa");
         dsKhoaKham.add("Thần kinh");
         dsKhoaKham.add("Tim mạch");
-
     }
 }
