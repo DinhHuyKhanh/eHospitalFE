@@ -24,6 +24,7 @@ import com.huawei.hms.support.account.result.AuthAccount;
 import com.huawei.hms.support.account.service.AccountAuthService;
 import com.ktt.entities.Account;
 import com.ktt.response.AccountDTO;
+
 import com.ktt.model.ApiAuthService;
 
 import retrofit2.Call;
@@ -121,7 +122,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 System.out.println("accountDTO : " + account.getAccessToken() + "\n Respon" + response +"\n call: " + call );
 
-                Toast.makeText(LoginActivity.this, "Xin chào :" + accountDTO.getUsername() ,Toast.LENGTH_SHORT).show();
+                //Toast.makeText(LoginActivity.this, "Xin chào :" + accountDTO.getUsername() ,Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(LoginActivity.this,TrangChu.class);
                 startActivity(intent);
@@ -131,7 +132,9 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Account> call, Throwable t) {
+
                 Toast.makeText(LoginActivity.this, "failed :" + accountDTO.getUsername() ,Toast.LENGTH_SHORT).show();
+
             }
 
         });
