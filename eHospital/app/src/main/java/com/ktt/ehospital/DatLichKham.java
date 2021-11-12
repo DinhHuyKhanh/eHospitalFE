@@ -264,6 +264,17 @@ public class DatLichKham extends AppCompatActivity {
                         tenBN + "\n" + ngaySinh + "\n" +gioiTinh + "\n" + diaChi + "\n" + sdtBN + "\n"
                         + ngayKham +"\n" + gioKham +"\n" + khoaKham +"\n" + tenBS +"\n" + giaKham,
                         Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(DatLichKham.this, DsLich.class);
+                intent.putExtra("tenBN",tenBN);
+                intent.putExtra("sdtBN",sdtBN);
+                intent.putExtra("tenBS",tenBS);
+                intent.putExtra("khoa",khoaKham);
+                intent.putExtra("ngay",ngayKham);
+                intent.putExtra("gio",gioKham);
+                intent.putExtra("gia",giaKham);
+
+                startActivity(intent);
             }
         });
 

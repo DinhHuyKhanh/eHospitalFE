@@ -176,7 +176,6 @@
 
         <LinearLayout
             android:padding="5dp"
-            android:background="@color/white"
             android:layout_marginTop="0dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -196,36 +195,33 @@
                 android:id="@+id/edtNgayKham"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Hiện ngày giờ"
                 android:layout_marginTop="0dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="39dp"
                 android:minHeight="48dp" />
         </LinearLayout>
 
         <LinearLayout
-            android:padding="5dp"
-            android:layout_marginRight="12dp"
-            android:layout_marginLeft="12dp"
-            android:background="@color/white"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_marginTop="12dp"
-            android:layout_height="45dp">
+            android:layout_height="45dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+
+            android:orientation="horizontal"
+            android:padding="5dp">
+
             <TextView
+                android:id="@+id/tviewGio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Chọn giờ"
-                android:id="@+id/tviewGio"
-                android:textSize="20sp"
                 android:textColor="@color/black"
-                />
+                android:textSize="20sp" />
 
             <Spinner
                 android:id="@+id/spinnerGioKham"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="85dp"
-                android:layout_marginTop="10dp">
+                android:layout_width="238dp"
+                android:layout_height="34dp"
+                android:layout_marginLeft="55dp">
 
             </Spinner>
         </LinearLayout>
@@ -248,8 +244,8 @@
 
             <Spinner
                 android:id="@+id/spinnerKhoaKham"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
+                android:layout_width="197dp"
+                android:layout_height="35dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="0dp">
 
@@ -276,7 +272,7 @@
             <Spinner
                 android:id="@+id/spinnerBacSi"
                 android:layout_width="200dp"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:layout_marginLeft="60dp"
                 android:layout_marginTop="0dp">
 

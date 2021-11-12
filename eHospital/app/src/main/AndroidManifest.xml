@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.ktt.ehospital">
+    package="com.ktt.ehospital" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -14,16 +14,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EHospital"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true" >
+        <activity
+            android:name=".DsLich"
+            android:exported="true" />
         <activity
             android:name=".DatLichKham"
             android:exported="true" >
-
         </activity>
         <activity
             android:name=".DatLich"
-            android:exported="true">
-
+            android:exported="true" >
         </activity>
         <activity
             android:name=".activity_register"
@@ -40,17 +41,11 @@
             android:name=".TrangChu"
             android:exported="true" />
         <activity
-            android:name=".NgayGio"
-            android:exported="true" />
-        <activity
-            android:name=".ChiTietLich"
-            android:exported="true" />
-        <activity
             android:name=".InforUser"
             android:exported="true" />
         <activity
             android:name=".LoginActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

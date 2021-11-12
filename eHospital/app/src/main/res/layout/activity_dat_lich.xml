@@ -320,12 +320,12 @@
         android:padding="5dp">
 
         <TextView
+            android:id="@+id/tvBacSi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Chọn bác sĩ:"
-            android:id="@+id/tvBacSi"
-            android:textSize="20dp"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="20dp" />
 
         <Spinner
             android:id="@+id/spinnerBacSi"
