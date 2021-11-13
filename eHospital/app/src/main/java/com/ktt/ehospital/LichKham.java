@@ -10,16 +10,6 @@ public class LichKham {
     String giaKham;
     String status;
 
-    public LichKham(String tenBN, String sdtBN, String tenBS, String khoaKham, String ngayKham, String gioKham, String giaKham) {
-        this.tenBN = tenBN;
-        this.sdtBN = sdtBN;
-        this.tenBS = tenBS;
-        this.khoaKham = khoaKham;
-        this.ngayKham = ngayKham;
-        this.gioKham = gioKham;
-        this.giaKham = giaKham;
-    }
-
     public LichKham(String tenBN, String sdtBN, String tenBS, String khoaKham, String ngayKham, String gioKham, String giaKham, String status) {
         this.tenBN = tenBN;
         this.sdtBN = sdtBN;

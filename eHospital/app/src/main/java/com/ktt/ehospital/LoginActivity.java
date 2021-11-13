@@ -132,7 +132,9 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Account> call, Throwable t) {
-                Toast.makeText(LoginActivity.this, "failed  :" + accountDTO.getUsername() ,Toast.LENGTH_SHORT).show();
+
+                Toast.makeText(LoginActivity.this, "failed :" + accountDTO.getUsername() ,Toast.LENGTH_SHORT).show();
+
             }
 
         });
