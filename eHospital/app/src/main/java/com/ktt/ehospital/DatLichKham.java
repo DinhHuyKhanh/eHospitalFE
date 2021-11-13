@@ -44,7 +44,7 @@ public class DatLichKham extends AppCompatActivity {
 
         //Xử lý sự kiện
         eventBack(); // nút back trên đầu trang
-        eventKhoaKham(); 
+        eventKhoaKham();
         eventGioKham();
         eventBacSi();
         eventChonNgay();
