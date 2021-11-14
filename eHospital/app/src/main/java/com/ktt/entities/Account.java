@@ -7,7 +7,7 @@ public class Account {
     private String username;
     private List<String> roles;
     private String tokenType;
-    private String accessToken;
+    private static String accessToken;
 
     public Account(int id, String username, List<String> roles, String tokenType, String accessToken) {
         this.id = id;
@@ -49,11 +49,11 @@ public class Account {
         this.tokenType = tokenType;
     }
 
-    public String getAccessToken() {
+    public static String getAccessToken() {
         return accessToken;
     }
 
-    public void setAccessToken(String accessToken) {
-        this.accessToken = accessToken;
+    public static void setAccessToken(String accessToken) {
+        Account.accessToken = accessToken;
     }
 }

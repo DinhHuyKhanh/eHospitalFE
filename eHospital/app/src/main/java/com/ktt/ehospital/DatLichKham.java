@@ -27,7 +27,7 @@ public class DatLichKham extends AppCompatActivity {
     EditText edtTenBN, edtNgaySinh, edtGioiTinh, edtDiaChi, edtSDT, edtNgayKham;
     ArrayList<String> dsKhoaKham, dsGioKham;
     ArrayList<infoBacSi> dsBacSi;
-    BacSiAdapter adtBacSi;
+//    BacSiAdapter adtBacSi;
     Spinner spinGioKham, spinKhoaKham, spinBacSi;
     String tenBN, ngaySinh, gioiTinh, diaChi, sdtBN, ngayKham, gioKham, khoaKham, tenBS, giaKham;
 

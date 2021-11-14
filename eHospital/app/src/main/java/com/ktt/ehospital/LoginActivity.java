@@ -22,24 +22,23 @@ import com.huawei.hms.support.account.request.AccountAuthParams;
 import com.huawei.hms.support.account.request.AccountAuthParamsHelper;
 import com.huawei.hms.support.account.result.AuthAccount;
 import com.huawei.hms.support.account.service.AccountAuthService;
+import com.ktt.DTO.AccountDTO;
 import com.ktt.entities.Account;
-import com.ktt.response.AccountDTO;
-
-import com.ktt.model.ApiAuthService;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import com.ktt.presenter.LoginPresenter;
+import com.ktt.view.ILoginView;
 
 //import retrofit2.Call;
 //import retrofit2.Callback;
 //import retrofit2.Response;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity implements ILoginView {
 
     private static final String TAG = "DemoHMSAccountKit";
     private AccountAuthParams authParams;
     private AccountAuthService authService;
+
+    private ILoginView loginView;
+    private LoginPresenter loginPresenter;
 
     private Button btnSignIn, btnSignInHuaWei, btnRegister;
     private TextView txtUsername, txtPassword;
@@ -108,35 +107,26 @@ public class LoginActivity extends AppCompatActivity {
             AccountDTO accountDTO= new AccountDTO();
             accountDTO.setUsername( txtUsername.getText().toString() );
             accountDTO.setPassword( txtPassword.getText().toString());
+            loginPresenter = new LoginPresenter(this);
+            loginPresenter.sendAccount(accountDTO);
 
-            sendAccount(accountDTO);
         });
     }
 
-    private void sendAccount(AccountDTO accountDTO){
-        ApiAuthService.apiService.sendAccount(accountDTO).enqueue(new Callback<Account>() {
-            @Override
-            public void onResponse(Call<Account> call, Response<Account> response) {
-//                Toast.makeText(LoginActivity.this, " Call Api Success",Toast.LENGTH_SHORT).show();
-                Account account = response.body();
-
-                System.out.println("accountDTO : " + account.getAccessToken() + "\n Respon" + response +"\n call: " + call );
-
-                //Toast.makeText(LoginActivity.this, "Xin chào :" + accountDTO.getUsername() ,Toast.LENGTH_SHORT).show();
-
-                Intent intent = new Intent(LoginActivity.this,TrangChu.class);
+    @Override
+    public void onComplete(Account account) {
+            if(account.getId() != 0){
+                System.out.println("Login: "+ account.getId() +  "\n name: " + account.getUsername() );
+                Intent intent = new Intent(LoginActivity.this, TrangChu.class);
                 startActivity(intent);
-                //finish();
-
+            }else{
+                Toast.makeText(LoginActivity.this, "sai thong tin mat khau",Toast.LENGTH_SHORT).show();
+                System.out.println("ahaaaaaa");
             }
+    }
 
-            @Override
-            public void onFailure(Call<Account> call, Throwable t) {
-
-                Toast.makeText(LoginActivity.this, "failed :" + accountDTO.getUsername() ,Toast.LENGTH_SHORT).show();
-
-            }
-
-        });
+    @Override
+    public void onError(String message) {
+        Toast.makeText(LoginActivity.this, "sai thong tin mat khau",Toast.LENGTH_SHORT).show();
     }
 }
