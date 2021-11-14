@@ -12,5 +12,6 @@
     <string name="username">username</string>
     <string name="signInHuawei">Sign in with Huawei ID</string>
     <string name="register">Register</string>
+    <string name="cancel"> Cancel</string>
 
 </resources>

@@ -1,6 +1,4 @@
-package com.ktt.response;
-
-import java.util.List;
+package com.ktt.DTO;
 
 public class AccountDTO {
     private String username;

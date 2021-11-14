@@ -2,7 +2,7 @@ package com.ktt.entities;
 
 public class Appointment{
 
-    private String status="APPROVAL";
+    private String status="PENDING";
     private int accountId;
     private int doctorId;
     private String fullName;
