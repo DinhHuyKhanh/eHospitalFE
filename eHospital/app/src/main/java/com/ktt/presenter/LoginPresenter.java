@@ -1,10 +1,7 @@
 package com.ktt.presenter;
 
-import android.widget.Toast;
-
-import com.ktt.DTO.AccountDTO;
-import com.ktt.ehospital.LoginActivity;
-import com.ktt.entities.Account;
+import com.ktt.request.AccountRequest;
+import com.ktt.response.Account;
 import com.ktt.model.APIService;
 import com.ktt.view.ILoginView;
 
@@ -22,7 +19,7 @@ public class LoginPresenter implements  ILoginPresenter{
         this.loginView = loginView;
     }
 
-     public void sendAccount(AccountDTO accountDTO){
+     public void sendAccount(AccountRequest accountDTO){
         APIService.apiService.sendLogin(accountDTO).enqueue(new Callback<Account>() {
             @Override
             public void onResponse(Call<Account> call, Response<Account> response) {

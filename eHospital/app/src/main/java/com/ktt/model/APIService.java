@@ -2,24 +2,26 @@ package com.ktt.model;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.ktt.DTO.RegisterAccountDTO;
-import com.ktt.entities.Account;
-import com.ktt.entities.MessageResponse;
-import com.ktt.entities.ResponseJWT;
-import com.ktt.DTO.AccountDTO;
+import com.ktt.request.AppointmentRequest;
+import com.ktt.request.RegisterAccountRequest;
+import com.ktt.response.Account;
+import com.ktt.response.Department;
+import com.ktt.response.Doctor;
+import com.ktt.response.MessageResponse;
+import com.ktt.request.AccountRequest;
+import com.ktt.response.ResponseJWT;
 
-import java.io.IOException;
+import java.util.List;
 
-import okhttp3.Interceptor;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface APIService {
 
@@ -29,18 +31,26 @@ public interface APIService {
 
 
     APIService apiService = new Retrofit.Builder()
-            .baseUrl("http:192.168.197.1:8080")
+            .baseUrl("http:192.168.1.121:8080")
             .addConverterFactory(GsonConverterFactory.create(gson))
 //            .client(client)
             .build()
             .create(APIService.class);
 
     @POST("/api/auth/signin")
-    Call<Account> sendLogin(@Body AccountDTO accountDTO);
+    Call<Account> sendLogin(@Body AccountRequest accountDTO);
 
     @POST("/api/auth/signup")
-    Call<MessageResponse> sendAuthRegister(@Body RegisterAccountDTO registerAccountDTO);
+    Call<MessageResponse> sendAuthRegister(@Body RegisterAccountRequest registerAccountDTO);
+
+    @GET("/api/v1/departments")
+    Call<List<Department>> sendDatLichKham();
+
+    @GET("/api/v1/doctors/id={id}")
+    Call<List<Doctor>> sendListDoctor(@Path("id")int id);
 
 
-
+    @Headers({ "Content-Type: application/json;charset=UTF-8"})
+    @POST("/api/v1/appointments/create")
+    Call<ResponseJWT> sendCreateAppointment(@Body AppointmentRequest appointmentRequest, @Header("Authorization") String token);
 }

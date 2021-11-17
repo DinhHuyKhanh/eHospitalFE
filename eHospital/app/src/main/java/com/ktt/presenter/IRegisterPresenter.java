@@ -1,8 +1,7 @@
 package com.ktt.presenter;
 
-import com.ktt.DTO.AccountDTO;
-import com.ktt.DTO.RegisterAccountDTO;
+import com.ktt.request.RegisterAccountRequest;
 
 public interface IRegisterPresenter {
-    void sendAuthRegister(RegisterAccountDTO registerAccountDTO);
+    void sendAuthRegister(RegisterAccountRequest registerAccountDTO);
 }

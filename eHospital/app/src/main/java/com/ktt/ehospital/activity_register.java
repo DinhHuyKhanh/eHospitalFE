@@ -8,12 +8,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.ktt.DTO.AccountDTO;
-import com.ktt.DTO.RegisterAccountDTO;
-import com.ktt.entities.Account;
-import com.ktt.entities.MessageResponse;
-import com.ktt.entities.ResponseJWT;
-import com.ktt.presenter.IRegisterPresenter;
+import com.ktt.request.RegisterAccountRequest;
+import com.ktt.response.MessageResponse;
 import com.ktt.presenter.RegisterPresenter;
 import com.ktt.view.IRegisterView;
 
@@ -33,7 +29,7 @@ public class activity_register extends AppCompatActivity implements IRegisterVie
         btnCancel = findViewById(R.id.cancel);
 
         btnRegister.setOnClickListener(item->{
-            RegisterAccountDTO registerAccountDTO = new RegisterAccountDTO();
+            RegisterAccountRequest registerAccountDTO = new RegisterAccountRequest();
             registerAccountDTO.setPassword(txtPassword.getText().toString());
             registerAccountDTO.setUsername(txtUsername.getText().toString());
 

@@ -1,9 +1,7 @@
 package com.ktt.presenter;
 
-import com.ktt.DTO.AccountDTO;
-import com.ktt.DTO.RegisterAccountDTO;
-import com.ktt.entities.MessageResponse;
-import com.ktt.entities.ResponseJWT;
+import com.ktt.request.RegisterAccountRequest;
+import com.ktt.response.MessageResponse;
 import com.ktt.model.APIService;
 import com.ktt.view.IRegisterView;
 
@@ -20,7 +18,7 @@ public class RegisterPresenter implements  IRegisterPresenter{
     }
 
     @Override
-    public void sendAuthRegister(RegisterAccountDTO registerAccountDTO) {
+    public void sendAuthRegister(RegisterAccountRequest registerAccountDTO) {
         APIService.apiService.sendAuthRegister(registerAccountDTO).enqueue(new Callback<MessageResponse>() {
             @Override
             public void onResponse(Call<MessageResponse> call, Response<MessageResponse> response) {
