@@ -1,12 +1,39 @@
-package com.ktt.entities;
+package com.ktt.response;
 
-public class Doctor{
-    private int department_id;
+public class AppointmentResponse {
+    private String status;
+    private int accountId;
+    private int doctorId;
     private String fullName;
     private String birthday;
     private String gender;
     private String address;
     private String numberPhone;
+    private String dateAppointment;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public int getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(int accountId) {
+        this.accountId = accountId;
+    }
+
+    public int getDoctorId() {
+        return doctorId;
+    }
+
+    public void setDoctorId(int doctorId) {
+        this.doctorId = doctorId;
+    }
 
     public String getFullName() {
         return fullName;
@@ -48,11 +75,11 @@ public class Doctor{
         this.numberPhone = numberPhone;
     }
 
-    public int getDepartment_id() {
-        return department_id;
+    public String getDateAppointment() {
+        return dateAppointment;
     }
 
-    public void setDepartment_id(int department_id) {
-        this.department_id = department_id;
+    public void setDateAppointment(String dateAppointment) {
+        this.dateAppointment = dateAppointment;
     }
 }

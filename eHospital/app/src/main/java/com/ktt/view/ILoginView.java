@@ -1,6 +1,6 @@
 package com.ktt.view;
 
-import com.ktt.entities.Account;
+import com.ktt.response.Account;
 
 public interface ILoginView {
     public void onComplete(Account account);

@@ -1,8 +1,7 @@
 package com.ktt.presenter;
 
-import com.ktt.DTO.AccountDTO;
+import com.ktt.request.AccountRequest;
 
 public interface ILoginPresenter {
-    void sendAccount(AccountDTO accountDTO);
-
+    void sendAccount(AccountRequest accountDTO);
 }

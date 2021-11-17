@@ -13,5 +13,7 @@
     <string name="signInHuawei">Sign in with Huawei ID</string>
     <string name="register">Register</string>
     <string name="cancel"> Cancel</string>
+    <string name="Male"> Nam</string>
+    <string name="Female">Nữ</string>
 
 </resources>

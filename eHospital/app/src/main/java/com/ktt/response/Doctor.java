@@ -1,38 +1,48 @@
-package com.ktt.entities;
+package com.ktt.response;
 
-public class Appointment{
+public class Doctor{
 
-    private String status="PENDING";
-    private int accountId;
-    private int doctorId;
+    private int department_id;
+    private int id;
     private String fullName;
     private String birthday;
     private String gender;
     private String address;
     private String numberPhone;
+    private int experience; // kinh nghiệm
+    private String degree; // học vị, học hàm
+    private int cost; // chi phí
 
-    public String getStatus() {
-        return status;
+    public int getExperience() {
+        return experience;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public int getId() {
+        return id;
     }
 
-    public int getAccountId() {
-        return accountId;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setAccountId(int accountId) {
-        this.accountId = accountId;
+    public void setExperience(int experience) {
+        this.experience = experience;
     }
 
-    public int getDoctorId() {
-        return doctorId;
+    public String getDegree() {
+        return degree;
     }
 
-    public void setDoctorId(int doctorId) {
-        this.doctorId = doctorId;
+    public void setDegree(String degree) {
+        this.degree = degree;
+    }
+
+    public int getCost() {
+        return cost;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
     }
 
     public String getFullName() {
@@ -75,7 +85,11 @@ public class Appointment{
         this.numberPhone = numberPhone;
     }
 
+    public int getDepartment_id() {
+        return department_id;
+    }
 
-
-
+    public void setDepartment_id(int department_id) {
+        this.department_id = department_id;
+    }
 }

@@ -2,7 +2,9 @@ package com.ktt.ehospital;
 
 import static androidx.activity.result.ActivityResultCallerKt.registerForActivityResult;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -22,9 +24,10 @@ import com.huawei.hms.support.account.request.AccountAuthParams;
 import com.huawei.hms.support.account.request.AccountAuthParamsHelper;
 import com.huawei.hms.support.account.result.AuthAccount;
 import com.huawei.hms.support.account.service.AccountAuthService;
-import com.ktt.DTO.AccountDTO;
-import com.ktt.entities.Account;
+import com.ktt.request.AccountRequest;
+import com.ktt.response.Account;
 import com.ktt.presenter.LoginPresenter;
+import com.ktt.response.Session;
 import com.ktt.view.ILoginView;
 
 //import retrofit2.Call;
@@ -39,9 +42,17 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
 
     private ILoginView loginView;
     private LoginPresenter loginPresenter;
+    SharedPreferences sharedpreferences;
 
     private Button btnSignIn, btnSignInHuaWei, btnRegister;
     private TextView txtUsername, txtPassword;
+
+    public static final String MyPREFERENCES = "MyPrefs" ;
+    public static final String name = "nameKey";
+    public static final String id = "idKey";
+    public static final String tokenType = "tokenKey";
+    public static final String accessToken = "accessTokenKey";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -104,24 +115,26 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
 
     private void setBtnSignIn(){
         btnSignIn.setOnClickListener(item->{
-            AccountDTO accountDTO= new AccountDTO();
+            AccountRequest accountDTO= new AccountRequest();
             accountDTO.setUsername( txtUsername.getText().toString() );
             accountDTO.setPassword( txtPassword.getText().toString());
             loginPresenter = new LoginPresenter(this);
             loginPresenter.sendAccount(accountDTO);
-
         });
     }
 
     @Override
     public void onComplete(Account account) {
             if(account.getId() != 0){
-                System.out.println("Login: "+ account.getId() +  "\n name: " + account.getUsername() );
+                Session session = new Session(this);
+                session.setId(account.getId());
+                session.setUsename(account.getUsername());
+                session.setAccessToken(account.getAccessToken());
+
                 Intent intent = new Intent(LoginActivity.this, TrangChu.class);
                 startActivity(intent);
             }else{
                 Toast.makeText(LoginActivity.this, "sai thong tin mat khau",Toast.LENGTH_SHORT).show();
-                System.out.println("ahaaaaaa");
             }
     }
 

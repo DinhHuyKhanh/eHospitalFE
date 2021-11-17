@@ -1,4 +1,4 @@
-package com.ktt.entities;
+package com.ktt.response;
 
 public class MessageResponse {
     private String message;

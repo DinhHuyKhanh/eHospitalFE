@@ -1,4 +1,4 @@
-package com.ktt.entities;
+package com.ktt.response;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ public class Account {
     private String username;
     private List<String> roles;
     private String tokenType;
-    private static String accessToken;
+    private String accessToken;
 
     public Account(int id, String username, List<String> roles, String tokenType, String accessToken) {
         this.id = id;
@@ -25,7 +25,7 @@ public class Account {
         this.id = id;
     }
 
-    public String getUsername() {
+    public  String getUsername() {
         return username;
     }
 
@@ -49,11 +49,11 @@ public class Account {
         this.tokenType = tokenType;
     }
 
-    public static String getAccessToken() {
+    public String getAccessToken() {
         return accessToken;
     }
 
-    public static void setAccessToken(String accessToken) {
-        Account.accessToken = accessToken;
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
     }
 }
