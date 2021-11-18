@@ -61,7 +61,7 @@ public class DatLichKhamPresenter implements IDatLichKhamPresenter {
 
     @Override
     public void sendCreateAppointment(AppointmentRequest appointmentRequest, String token) {
-        APIService.apiService.sendCreateAppointment(appointmentRequest, token).enqueue(new Callback<ResponseJWT>() {
+        APIService.apiService.sendCreateAppointment(appointmentRequest,"Bearer "+ token).enqueue(new Callback<ResponseJWT>() {
             @Override
             public void onResponse(Call<ResponseJWT> call, Response<ResponseJWT> response) {
                 datLichHenView.onCreateAppointmentComplete(response.body());
@@ -70,6 +70,21 @@ public class DatLichKhamPresenter implements IDatLichKhamPresenter {
             @Override
             public void onFailure(Call<ResponseJWT> call, Throwable t) {
                 datLichHenView.onAppointmentError(t.getMessage());
+            }
+        });
+    }
+
+    @Override
+    public void sendUpdateAppointment(AppointmentRequest appointmentRequest, String token) {
+        APIService.apiService.sendUpdateAppointment(appointmentRequest,"Bearer "+token).enqueue(new Callback<ResponseJWT>() {
+            @Override
+            public void onResponse(Call<ResponseJWT> call, Response<ResponseJWT> response) {
+                datLichHenView.onUpdateAppointmentComplete(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<ResponseJWT> call, Throwable t) {
+                datLichHenView.onUpdateAppointmentError(t.getMessage());
             }
         });
     }

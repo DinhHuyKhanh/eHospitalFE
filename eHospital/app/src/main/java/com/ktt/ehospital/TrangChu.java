@@ -40,6 +40,12 @@ public class TrangChu extends AppCompatActivity {
                 startActivity(in);
             }
         });
+    }
 
+    void setBtnLichKham(){
+        btnLichKham.setOnClickListener(item->{
+            Intent intent = new Intent(TrangChu.this, DsLich.class);
+            startActivity(intent);
+        });
     }
 }

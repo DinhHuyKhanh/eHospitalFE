@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.ktt.presenter.DatLichKhamPresenter;
 import com.ktt.request.AppointmentRequest;
+import com.ktt.response.AppointmentResponse;
 import com.ktt.response.Department;
 import com.ktt.response.Doctor;
 import com.ktt.response.ResponseJWT;
@@ -42,11 +43,12 @@ public class DatLichKham extends AppCompatActivity implements IDatLichHenView {
 //    BacSiAdapter adtBacSi;
     Spinner spinGioKham, spinKhoaKham, spinBacSi;
     String tenBN, ngaySinh, gioiTinh, diaChi, sdtBN, ngayKham, gioKham, khoaKham, tenBS, giaKham;
-    int departmentId, doctorId;
-
+    int departmentId, doctorId, id=0;
     private DatLichKhamPresenter datlichKhamPresenter;
     private List<Department> departmentList;
     private List<Doctor> doctorList;
+    private AppointmentRequest request;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +56,7 @@ public class DatLichKham extends AppCompatActivity implements IDatLichHenView {
         setContentView(R.layout.activity_dat_lich_kham);
 
         getView();
+        getInfoUser();
         //Thêm dữ liệu vào danh sách khoa khám, giờ khám, bác sĩ
 //        addKhoaKham();
         addGioKham();
@@ -67,6 +70,17 @@ public class DatLichKham extends AppCompatActivity implements IDatLichHenView {
         eventChonNgay();
         getThongTin();
         datLich();
+    }
+    private void getInfoUser(){
+        if(getIntent().getSerializableExtra("infoUser") != null){
+
+            AppointmentResponse response = (AppointmentResponse) getIntent().getSerializableExtra("infoUser");
+            id= response.getId();
+            edtTenBN.setText(response.getFullName());
+            edtNgaySinh.setText(response.getBirthday());
+            edtDiaChi.setText(response.getAddress());
+            edtSDT.setText(response.getNumberPhone());
+        }
     }
 
     private void getView(){
@@ -303,7 +317,7 @@ public class DatLichKham extends AppCompatActivity implements IDatLichHenView {
                 }
                 Session session = new Session(getApplicationContext());
 //                System.out.println("id is: " + session.getId());
-
+                appointmentRequest.setId(id);
                 appointmentRequest.setFullName(tenBN);
                 appointmentRequest.setBirthday(ngaySinh);
                 appointmentRequest.setAddress(diaChi);
@@ -313,22 +327,15 @@ public class DatLichKham extends AppCompatActivity implements IDatLichHenView {
                 appointmentRequest.setAccountId(session.getId());
                 appointmentRequest.setDoctorId(getDoctorId());
                 appointmentRequest.setDepartmentId(getDepartmentId());
-
                 System.out.println("btn SDT" + doctorId + departmentId);
-                System.out.println(" date" +  appointmentRequest.getDepartmentId() +'\n'  +" Numbr :" + appointmentRequest.getDoctorId() );
 
-                datlichKhamPresenter.sendCreateAppointment(appointmentRequest, session.getAccessToken());
-
-//                Intent intent = new Intent(DatLichKham.this, DsLich.class);
-//                intent.putExtra("tenBN",tenBN);
-//                intent.putExtra("sdtBN",sdtBN);
-//                intent.putExtra("tenBS",tenBS);
-//                intent.putExtra("khoa",khoaKham);
-//                intent.putExtra("ngay",ngayKham);
-//                intent.putExtra("gio",gioKham);
-//                intent.putExtra("gia",giaKham);
-
-//                startActivity(intent);
+                if(id==0){
+                    datlichKhamPresenter.sendCreateAppointment(appointmentRequest, session.getAccessToken());
+                    System.out.println("create");
+                }else{
+                    datlichKhamPresenter.sendUpdateAppointment(appointmentRequest,session.getAccessToken());
+                    System.out.println("update");
+                }
             }
         });
 
@@ -361,12 +368,27 @@ public class DatLichKham extends AppCompatActivity implements IDatLichHenView {
     public void onCreateAppointmentComplete(ResponseJWT responseJWT) {
            if(responseJWT.getMessage().equals("status: 200")){
                System.out.println("Successfully !");
+               Intent intent = new Intent(DatLichKham.this,DsLich.class);
+               startActivity(intent);
            }else System.out.println("comp" + responseJWT.getMessage() + responseJWT.getData());
     }
 
     @Override
     public void onAppointmentError(String message) {
-            System.out.println("APpountl " + message);
+    }
+
+    @Override
+    public void onUpdateAppointmentComplete(ResponseJWT responseJWT) {
+        if(responseJWT.getMessage().equals("status: 200")){
+            System.out.println("Successfully !");
+            Intent intent = new Intent(DatLichKham.this,DsLich.class);
+            startActivity(intent);
+        }else System.out.println("comp" + responseJWT.getMessage() + responseJWT.getData());
+    }
+
+    @Override
+    public void onUpdateAppointmentError(String message) {
+
     }
 
     public void setDepartmentList(List<Department> departmentList) {

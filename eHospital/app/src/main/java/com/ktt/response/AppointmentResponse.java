@@ -1,6 +1,9 @@
 package com.ktt.response;
 
-public class AppointmentResponse {
+import java.io.Serializable;
+
+public class AppointmentResponse implements Serializable {
+    private int id;
     private String status;
     private int accountId;
     private int doctorId;
@@ -10,6 +13,20 @@ public class AppointmentResponse {
     private String address;
     private String numberPhone;
     private String dateAppointment;
+    private String department;
+    private String degree;
+    private int doctorExperience;
+    private String doctorName;
+    private int doctorPrice;
+    private int departmentId;
+
+    public int getDepartmentId() {
+        return departmentId;
+    }
+
+    public int getId(){
+        return this.id;
+    }
 
     public String getStatus() {
         return status;
@@ -81,5 +98,25 @@ public class AppointmentResponse {
 
     public void setDateAppointment(String dateAppointment) {
         this.dateAppointment = dateAppointment;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public String getDegree() {
+        return degree;
+    }
+
+    public int getDoctorExperience() {
+        return doctorExperience;
+    }
+
+    public String getDoctorName() {
+        return doctorName;
+    }
+
+    public int getDoctorPrice() {
+        return doctorPrice;
     }
 }
