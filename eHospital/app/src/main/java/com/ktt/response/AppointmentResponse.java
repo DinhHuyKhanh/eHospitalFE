@@ -1,8 +1,10 @@
-package com.ktt.entities;
+package com.ktt.response;
 
-public class Appointment{
+import java.io.Serializable;
 
-    private String status="APPROVAL";
+public class AppointmentResponse implements Serializable {
+    private int id;
+    private String status;
     private int accountId;
     private int doctorId;
     private String fullName;
@@ -10,6 +12,21 @@ public class Appointment{
     private String gender;
     private String address;
     private String numberPhone;
+    private String dateAppointment;
+    private String department;
+    private String degree;
+    private int doctorExperience;
+    private String doctorName;
+    private int doctorPrice;
+    private int departmentId;
+
+    public int getDepartmentId() {
+        return departmentId;
+    }
+
+    public int getId(){
+        return this.id;
+    }
 
     public String getStatus() {
         return status;
@@ -75,7 +92,31 @@ public class Appointment{
         this.numberPhone = numberPhone;
     }
 
+    public String getDateAppointment() {
+        return dateAppointment;
+    }
 
+    public void setDateAppointment(String dateAppointment) {
+        this.dateAppointment = dateAppointment;
+    }
 
+    public String getDepartment() {
+        return department;
+    }
 
+    public String getDegree() {
+        return degree;
+    }
+
+    public int getDoctorExperience() {
+        return doctorExperience;
+    }
+
+    public String getDoctorName() {
+        return doctorName;
+    }
+
+    public int getDoctorPrice() {
+        return doctorPrice;
+    }
 }

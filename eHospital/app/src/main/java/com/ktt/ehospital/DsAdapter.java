@@ -1,28 +1,33 @@
 package com.ktt.ehospital;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
+import com.ktt.response.AppointmentResponse;
+
+import java.io.Serializable;
 import java.util.List;
 
 public class DsAdapter extends BaseAdapter {
     private Context context;
     private int layout;
-    private List<LichKham> lichKhamList;
+    private List<AppointmentResponse> appointmentResponseList;
 
-    public DsAdapter(Context context, int layout, List<LichKham> lichKhamList) {
+    public DsAdapter(Context context, int layout, List<AppointmentResponse> appointmentResponseList) {
         this.context = context;
         this.layout = layout;
-        this.lichKhamList = lichKhamList;
+        this.appointmentResponseList = appointmentResponseList;
     }
 
     @Override
     public int getCount() {
-        return lichKhamList.size();
+        return appointmentResponseList.size();
     }
 
     @Override
@@ -35,29 +40,50 @@ public class DsAdapter extends BaseAdapter {
         return 0;
     }
 
+//    private class ViewHolder{
+//        TextView txName, tvDate,tvStatus;
+//        Button btnDetail;
+//    }
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        convertView = inflater.inflate(layout, null);
-        //ánh xạ
-        TextView tvTenBN = (TextView) convertView.findViewById(R.id.tvTenBN);
-        TextView tvSDTBN = (TextView) convertView.findViewById(R.id.tvSDTBN);
-        TextView tvTenBS = (TextView) convertView.findViewById(R.id.tvTenBS);
-        TextView tvKhoaK = (TextView) convertView.findViewById(R.id.tvKhoaK);
-        TextView tvDateK = (TextView) convertView.findViewById(R.id.tvDateK);
-        TextView tvGioK = (TextView) convertView.findViewById(R.id.tvGioK);
-        TextView tvGiaK = (TextView) convertView.findViewById(R.id.tvGiaK);
-        TextView tvTT = (TextView) convertView.findViewById(R.id.tvTT);
+
+//        ViewHolder viewHolder;
+//        if(convertView == null){
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = inflater.inflate(layout, null);
+//            viewHolder = new ViewHolder();
+
+            //ánh xạ
+        TextView txName = (TextView) convertView.findViewById(R.id.col2Name);
+        TextView tvDate = (TextView) convertView.findViewById(R.id.col2Date);
+            TextView tvStatus = (TextView) convertView.findViewById(R.id.col2Status);
+//            convertView.setTag(viewHolder);
+//        }else{
+//            viewHolder = (ViewHolder) convertView.getTag();
+//        }
+
+
         //gán gtri
-        LichKham lichKham = lichKhamList.get(position);
-        tvTenBN.setText(lichKham.getTenBN());
-        tvSDTBN.setText(lichKham.getSdtBN());
-        tvTenBS.setText(lichKham.getTenBS());
-        tvKhoaK.setText(lichKham.getKhoaKham());
-        tvDateK.setText(lichKham.getNgayKham());
-        tvGioK.setText(lichKham.getGioKham());
-        tvGiaK.setText(lichKham.getGiaKham());
-        tvTT.setText(lichKham.getStatus());
+        AppointmentResponse lichKham = appointmentResponseList.get(position);
+        txName.setText(lichKham.getFullName());
+        tvDate.setText(lichKham.getDateAppointment());
+        if(lichKham.getStatus().equals("PENDING")){
+            tvStatus.setText("Chờ xác nhận.");
+
+        }else if(lichKham.getStatus().equals("ABORT")){
+            tvStatus.setText("Đã hủy.");
+
+        }else{
+            tvStatus.setText("Đã đặt lịch thành công.");
+        }
+        Button btnDetails = convertView.findViewById(R.id.detail);
+
+        btnDetails.setOnClickListener(item->{
+            Intent intent = new Intent(context, detailsLichHen.class);
+            intent.putExtra("infoUser", (Serializable) appointmentResponseList.get(position));
+            context.startActivity(intent);
+        });
+
         return convertView;
     }
 }

@@ -6,93 +6,106 @@
     android:background="@color/white"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tvTenBN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="Họ tên"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvSDTBN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="2dp"
-        android:text="SĐT"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTenBN" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/blue_white"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_marginStart="10dp"
+        tools:ignore="MissingConstraints">
 
-    <TextView
-        android:textColor="@color/black"
-        android:id="@+id/tvTenBS"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="2dp"
-        android:text="GT"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSDTBN" />
+        <LinearLayout
+            android:id="@+id/liner1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/col1Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Họ và tên: "
+                android:textSize="25dp"
+                android:textColor="@color/black"
+                />
 
-    <TextView
-        android:textColor="@color/black"
-        android:id="@+id/tvKhoaK"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="2dp"
-        android:text="Khoa"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTenBS" />
+            <TextView
+                android:id="@+id/col2Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_marginLeft="10dp"
+                android:textSize="25dp"
+                android:textColor="@color/black"
+                />
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/tvDateK"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="2dp"
-        android:text="Ngày"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvKhoaK" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/liner2"
+            android:layout_below="@id/liner1"
+            android:layout_marginTop="5dp"
+            >
+            <TextView
+                android:id="@+id/col1Date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ngày hẹn: "
+                android:textSize="25dp"
+                android:textColor="@color/black"
+                />
 
-    <TextView
-        android:id="@+id/tvGioK"
-        android:textColor="@color/black"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="2dp"
-        android:text="Giờ"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDateK" />
+            <TextView
+                android:id="@+id/col2Date"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=""
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/liner3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/liner2"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/col1Status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trạng Thái"
+                android:textSize="25dp"
+                android:textColor="@color/black"
+                />
 
-    <TextView
-        android:textColor="@color/black"
-        android:id="@+id/tvGiaK"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="2dp"
-        android:text="Gía"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvGioK" />
+            <TextView
+                android:id="@+id/col2Status"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=""
+                android:textSize="25dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"
+                />
+        </LinearLayout>
 
-    <TextView
-        android:textColor="@color/black"
-        android:id="@+id/tvTT"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="2dp"
-        android:text="Trạng thái"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvGiaK" />
-
-
+        <Button
+            android:id="@+id/detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/liner3"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:background="@color/blue_white"
+            android:minHeight="48dp"
+            android:text="Chi tiết"
+            android:textColor="@color/hiad_video_progress_blue"
+            android:textSize="10dp" />
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

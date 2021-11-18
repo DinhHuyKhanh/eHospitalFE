@@ -40,33 +40,33 @@
 
         </LinearLayout>
 
-        <RadioGroup
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+<!--        <RadioGroup-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content" >-->
 
-            <RadioButton
-                android:id="@+id/clickCC"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:text="Chính chủ"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                tools:ignore="TouchTargetSizeCheck" />
+<!--            <RadioButton-->
+<!--                android:id="@+id/clickCC"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="50dp"-->
+<!--                android:text="Chính chủ"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="18sp"-->
+<!--                tools:ignore="TouchTargetSizeCheck" />-->
 
-            <RadioButton
-                android:id="@+id/clickDH"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="75dp"
-                android:text="Đặt hộ"
-                android:textColor="@color/black"
+<!--            <RadioButton-->
+<!--                android:id="@+id/clickDH"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="75dp"-->
+<!--                android:text="Đặt hộ"-->
+<!--                android:textColor="@color/black"-->
 
-                android:textSize="18sp"
-                tools:ignore="TouchTargetSizeCheck" />
-        </RadioGroup>
+<!--                android:textSize="18sp"-->
+<!--                tools:ignore="TouchTargetSizeCheck" />-->
+<!--        </RadioGroup>-->
         <LinearLayout
 
             android:layout_marginTop="10dp"
@@ -124,12 +124,27 @@
                 android:textSize="18sp"
                 />
 
-            <EditText
-                android:id="@+id/edtGioiTinh"
-                android:layout_width="250dp"
+            <RadioGroup
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="61dp"
-                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                android:layout_marginLeft="48dp"
+                android:orientation="horizontal">
+                <RadioButton android:id="@+id/radio_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Male"
+                    android:layout_marginStart="10dp"
+                    android:onClick="onRadioButtonClicked"/>
+
+                <RadioButton
+                    android:id="@+id/radio_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/Female" />
+            </RadioGroup>
+
         </LinearLayout>
         <LinearLayout
 

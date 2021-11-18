@@ -1,4 +1,4 @@
-package com.ktt.entities;
+package com.ktt.response;
 
 import java.util.List;
 
@@ -25,7 +25,7 @@ public class Account {
         this.id = id;
     }
 
-    public String getUsername() {
+    public  String getUsername() {
         return username;
     }
 
