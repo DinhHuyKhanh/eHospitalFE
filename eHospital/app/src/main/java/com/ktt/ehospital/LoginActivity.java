@@ -131,6 +131,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
                 session.setUsename(account.getUsername());
                 session.setAccessToken(account.getAccessToken());
 
+                System.out.println(" login access : " + session.getAccessToken());
                 Intent intent = new Intent(LoginActivity.this, TrangChu.class);
                 startActivity(intent);
             }else{

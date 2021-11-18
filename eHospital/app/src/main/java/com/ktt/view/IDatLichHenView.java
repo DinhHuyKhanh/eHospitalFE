@@ -17,4 +17,7 @@ public interface IDatLichHenView {
     public void onCreateAppointmentComplete(ResponseJWT responseJWT);
     public void onAppointmentError(String message);
 
+    public void onUpdateAppointmentComplete(ResponseJWT responseJWT);
+    public void onUpdateAppointmentError(String message);
+
 }

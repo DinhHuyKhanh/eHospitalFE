@@ -2,6 +2,7 @@ package com.ktt.request;
 
 public class AppointmentRequest {
 
+    private int id;
     private String status="PENDING";
     private int accountId;
     private int doctorId;
@@ -13,6 +14,13 @@ public class AppointmentRequest {
     private String numberPhone;
     private String dateAppointment;
 
+    public int getId(){
+        return this.id;
+    }
+
+    public void setId(int id){
+        this.id= id;
+    }
 
     public String getStatus() {
         return status;

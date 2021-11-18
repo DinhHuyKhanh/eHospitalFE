@@ -9,5 +9,6 @@ public interface IDatLichKhamPresenter {
     void sendDoctorByDepartmentId(int id);
 
     void sendCreateAppointment(AppointmentRequest appointmentRequest, String token);
+    void sendUpdateAppointment(AppointmentRequest appointmentRequest, String token);
 
 }
