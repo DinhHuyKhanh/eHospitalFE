@@ -36,6 +36,7 @@ public class activity_register extends AppCompatActivity implements IRegisterVie
             registerPresenter = new RegisterPresenter(this);
             registerPresenter.sendAuthRegister(registerAccountDTO);
 
+
         });
 
         btnCancel.setOnClickListener(item->{
@@ -49,6 +50,9 @@ public class activity_register extends AppCompatActivity implements IRegisterVie
     public void onRegisterComplete(MessageResponse messageResponse) {
         if(messageResponse.getMessage()!=null){
             Toast.makeText(activity_register.this,messageResponse.getMessage(),Toast.LENGTH_SHORT);
+            Intent intent = new Intent(activity_register.this, LoginActivity.class);
+            startActivity(intent);
+
         }else{
             Toast.makeText(activity_register.this,"error",Toast.LENGTH_SHORT);
         }

@@ -25,6 +25,7 @@ public class DSLichKhamPresenter implements  IDSLichKhamPresenter{
         APIService.apiService.sendListAppointments(id,"Bearer "+token).enqueue(new Callback<List<AppointmentResponse>>() {
             @Override
             public void onResponse(Call<List<AppointmentResponse>> call, Response<List<AppointmentResponse>> response) {
+                System.out.println("id :" + id + "otken" + token);
                 if(response.body() != null){
                     dsLichKhamView.onDSLichComplete(response.body());
                 }else{

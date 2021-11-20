@@ -59,6 +59,7 @@ public class DsLich extends AppCompatActivity implements IDSLichKhamView {
     public void onDSLichComplete(List<AppointmentResponse> appointmentResponseList) {
         dsAdapter = new DsAdapter(DsLich.this, R.layout.dong_ds,appointmentResponseList);
         lvds.setAdapter(dsAdapter) ;
+
 //        lvds.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            @Override
 //            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
